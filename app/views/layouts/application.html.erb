@@ -15,13 +15,22 @@
           <ul class="nav">
             <li> <%= link_to 'Home', :controller => 'home', :action => 'index' %> </li>
           </ul>
-          <p class="navbar-text pull-right">abc</p>
+          <ul class="nav pull-right">
+            <%= render 'layouts/menu/registration_items' %>
+            <%= render 'layouts/menu/login_items' %>
+          </ul>
         </div>
       </div>
     </div>
   </div>
 
   <div class="container">
+    <% if notice %>
+      <p class="notice"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert"><%= alert %></p>
+    <% end %>
     <%= yield %>
   </div>
 </body>
